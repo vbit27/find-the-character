@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import GameField from './GameField';
 import NavBar from './NavBar';
 import Rules from './Rules';
 
@@ -13,11 +14,7 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      {gameStatus ? (
-        <h1>Playing</h1>
-      ) : (
-        <Rules updateStatus={updateGameStatus} />
-      )}
+      {gameStatus ? <GameField /> : <Rules updateStatus={updateGameStatus} />}
     </div>
   );
 }
