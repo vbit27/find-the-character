@@ -5,7 +5,13 @@ import classes from './DropDown.module.css';
 
 const DropDown: React.FC<DropDownProp> = ({ clientX, clientY, showMenu }) => {
   return (
-    <div className={clsx(classes.container)}>
+    <div
+      className={clsx(classes.container)}
+      style={{
+        top: clientX,
+        left: clientY,
+      }}
+    >
       <List component="nav" aria-label="secondary mailbox folder">
         <ListItem button>
           <ListItemText primary="Trash" />
