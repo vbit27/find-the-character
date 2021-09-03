@@ -12,7 +12,9 @@ const GameField = () => {
     setClientX(e.pageX);
     setClientY(e.pageY);
     setShowMenu(true);
-    console.log(e);
+    const click = e.currentTarget.getBoundingClientRect();
+
+    console.log(click);
   };
 
   return (
@@ -21,7 +23,12 @@ const GameField = () => {
         className={clsx(classes.image)}
         src="/images/image.jpg"
         alt="waldo"
+        onLoad={(event) => {
+          console.log(event.currentTarget.naturalWidth);
+          console.log(event.currentTarget.naturalHeight);
+        }}
       />
+
       <DropDown xPos={clientX} yPos={clientY} showMenu={setShowMenu} />
     </div>
   );
