@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import React from 'react';
 import classes from './DropDown.module.css';
 
-const DropDown = () => {
+const DropDown: React.FC<DropDownProp> = ({ clientX, clientY, showMenu }) => {
   return (
     <div className={clsx(classes.container)}>
       <List component="nav" aria-label="secondary mailbox folder">
@@ -19,3 +19,9 @@ const DropDown = () => {
 };
 
 export default DropDown;
+
+interface DropDownProp {
+  clientX: number;
+  clientY: number;
+  showMenu: React.Dispatch<React.SetStateAction<boolean>>;
+}

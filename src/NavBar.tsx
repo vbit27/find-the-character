@@ -7,7 +7,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 export default function NavBar() {
   return (
     <div>
-      <AppBar position="sticky">
+      <AppBar position="fixed">
         <Toolbar>
           <Typography variant="h6">
             <MenuIcon fontSize="small" />
