@@ -9,10 +9,10 @@ const GameField = () => {
   const [showMenu, setShowMenu] = useState(false);
 
   const setCoordinates = (e: React.MouseEvent<HTMLDivElement>) => {
-    setClientX(e.clientX);
-    setClientY(e.clientY);
+    setClientX(e.pageX);
+    setClientY(e.pageY);
     setShowMenu(true);
-    console.log(e.clientX, e.clientY);
+    console.log(e);
   };
 
   return (
@@ -22,7 +22,7 @@ const GameField = () => {
         src="/images/image.jpg"
         alt="waldo"
       />
-      <DropDown clientX={clientX} clientY={clientY} showMenu={setShowMenu} />
+      <DropDown xPos={clientX} yPos={clientY} showMenu={setShowMenu} />
     </div>
   );
 };
