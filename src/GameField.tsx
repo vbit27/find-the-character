@@ -12,14 +12,16 @@ const GameField = () => {
     setClientX(e.pageX);
     setClientY(e.pageY);
     setShowMenu(!showMenu);
-    const click = e.currentTarget.getBoundingClientRect();
+    //const click = e.currentTarget.getBoundingClientRect();
 
-    console.log(click);
+    console.log(e.pageX);
+  };
+
+  const chooseCharacter = (name: string) => {
+    console.log(name);
   };
 
   /*
-var canvasX = relativeX * mainCanvas.width / mainCanvas.clientWidth;
-    var canvasY = relativeY * mainCanvas.height / mainCanvas.clientHeight;
 
     let realXValue = x * yourImageReal.width / yourImage.clientWidth
 let realYValue = y * yourImageReal.height / yourImage.clientHeight
@@ -32,11 +34,16 @@ let realYValue = y * yourImageReal.height / yourImage.clientHeight
         alt="waldo"
         onLoad={(event) => {
           console.log(event.currentTarget.naturalWidth);
-          console.log(event.currentTarget.naturalHeight);
+          console.log(event.currentTarget.clientWidth);
         }}
       />
 
-      <DropDown xPos={clientX} yPos={clientY} showMenu={showMenu} />
+      <DropDown
+        xPos={clientX}
+        yPos={clientY}
+        showMenu={showMenu}
+        chooseCharacter={chooseCharacter}
+      />
     </div>
   );
 };

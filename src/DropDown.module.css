@@ -11,3 +11,15 @@
   position: absolute;
   background-color: wheat;
 }
+
+button {
+  width: 100%;
+  border: none;
+  background-color: antiquewhite;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(192, 179, 161);
+}

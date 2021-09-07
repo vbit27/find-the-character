@@ -2,7 +2,12 @@ import clsx from 'clsx';
 import React from 'react';
 import classes from './DropDown.module.css';
 
-const DropDown: React.FC<DropDownProp> = ({ xPos, yPos, showMenu }) => {
+const DropDown: React.FC<DropDownProp> = ({
+  xPos,
+  yPos,
+  showMenu,
+  chooseCharacter,
+}) => {
   return (
     <div>
       <div style={{ display: showMenu ? 'block' : 'none' }}>
@@ -20,9 +25,9 @@ const DropDown: React.FC<DropDownProp> = ({ xPos, yPos, showMenu }) => {
             left: xPos + 30,
           }}
         >
-          <h3>Jak</h3>
-          <h3>Ratchet</h3>
-          <h3>Juna</h3>
+          <button onClick={() => chooseCharacter('jack')}>Jak</button>
+          <button onClick={() => chooseCharacter('ratchet')}>Ratchet</button>
+          <button onClick={() => chooseCharacter('juna')}>Juna</button>
         </div>
       </div>
     </div>
@@ -35,4 +40,5 @@ interface DropDownProp {
   xPos: number;
   yPos: number;
   showMenu: boolean;
+  chooseCharacter: (name: string) => void;
 }
