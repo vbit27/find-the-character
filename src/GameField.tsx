@@ -11,7 +11,7 @@ const GameField = () => {
   const setCoordinates = (e: React.MouseEvent<HTMLDivElement>) => {
     setClientX(e.pageX);
     setClientY(e.pageY);
-    setShowMenu(true);
+    setShowMenu(!showMenu);
     const click = e.currentTarget.getBoundingClientRect();
 
     console.log(click);
@@ -36,7 +36,7 @@ let realYValue = y * yourImageReal.height / yourImage.clientHeight
         }}
       />
 
-      <DropDown xPos={clientX} yPos={clientY} showMenu={setShowMenu} />
+      <DropDown xPos={clientX} yPos={clientY} showMenu={showMenu} />
     </div>
   );
 };
