@@ -4,22 +4,26 @@ import React from 'react';
 import classes from './DropDown.module.css';
 
 const DropDown: React.FC<DropDownProp> = ({ xPos, yPos, showMenu }) => {
-  /*<List component="nav" aria-label="secondary mailbox folder">
-  <ListItem button>
-    <ListItemText primary="Trash" />
-  </ListItem>
-  <ListItem button>
-    <ListItemText primary="Spam" />
-  </ListItem>
-</List>*/
   return (
-    <div
-      className={clsx(classes.container)}
-      style={{
-        top: yPos - 20,
-        left: xPos - 20,
-      }}
-    ></div>
+    <>
+      <div
+        className={clsx(classes.container)}
+        style={{
+          top: yPos - 20,
+          left: xPos - 20,
+        }}
+      ></div>
+      <div
+        className={clsx(classes.menu)}
+        style={{
+          top: yPos + 30,
+          left: xPos + 30,
+        }}
+      >
+        <h3>Hi</h3>
+        <h3>Ho</h3>
+      </div>
+    </>
   );
 };
 

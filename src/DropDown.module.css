@@ -5,3 +5,9 @@
   border: 5px solid rgb(204, 226, 204);
   padding: 15px;
 }
+
+.menu {
+  width: 150px;
+  position: absolute;
+  background-color: wheat;
+}

@@ -17,6 +17,13 @@ const GameField = () => {
     console.log(click);
   };
 
+  /*
+var canvasX = relativeX * mainCanvas.width / mainCanvas.clientWidth;
+    var canvasY = relativeY * mainCanvas.height / mainCanvas.clientHeight;
+
+    let realXValue = x * yourImageReal.width / yourImage.clientWidth
+let realYValue = y * yourImageReal.height / yourImage.clientHeight
+*/
   return (
     <div className={clsx(classes.border)} onClick={(e) => setCoordinates(e)}>
       <img
