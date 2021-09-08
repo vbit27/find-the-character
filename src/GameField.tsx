@@ -2,11 +2,18 @@ import React, { useState } from 'react';
 import classes from './GameField.module.css';
 import clsx from 'clsx';
 import DropDown from './DropDown';
+import { doc, getDoc } from 'firebase/firestore';
+import { db } from './firebase_config';
 
 const GameField = () => {
   const [clientX, setClientX] = useState(0);
   const [clientY, setClientY] = useState(0);
+  const [character, setCharacter] = useState('');
+  const [naturalHeight, setNaturalHeight] = useState(0);
+  const [naturalWidth, setNaturalWidth] = useState(0);
   const [showMenu, setShowMenu] = useState(false);
+
+  const docRef = doc(db, 'characters', 'jack');
 
   const setCoordinates = (e: React.MouseEvent<HTMLDivElement>) => {
     setClientX(e.pageX);
@@ -14,11 +21,12 @@ const GameField = () => {
     setShowMenu(!showMenu);
     //const click = e.currentTarget.getBoundingClientRect();
 
-    console.log(e.pageX);
+    console.log(docRef);
   };
 
   const chooseCharacter = (name: string) => {
-    console.log(name);
+    setCharacter(name);
+    console.log(character, clientX, naturalWidth);
   };
 
   /*
@@ -33,8 +41,8 @@ let realYValue = y * yourImageReal.height / yourImage.clientHeight
         src="/images/image.jpg"
         alt="waldo"
         onLoad={(event) => {
-          console.log(event.currentTarget.naturalWidth);
-          console.log(event.currentTarget.clientWidth);
+          setNaturalWidth(event.currentTarget.naturalWidth);
+          setNaturalHeight(event.currentTarget.clientWidth);
         }}
       />
 
