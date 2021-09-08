@@ -9,11 +9,25 @@ const GameField = () => {
   const [clientX, setClientX] = useState(0);
   const [clientY, setClientY] = useState(0);
   const [character, setCharacter] = useState('');
-  const [naturalHeight, setNaturalHeight] = useState(0);
-  const [naturalWidth, setNaturalWidth] = useState(0);
   const [showMenu, setShowMenu] = useState(false);
+  const [naturalDimensions, setNaturalDimensions] = useState({
+    naturalHeight: 0,
+    naturalWidth: 0,
+    clientHeight: 0,
+    clientWidth: 0,
+  });
 
-  const docRef = doc(db, 'characters', 'jack');
+  const getData = async () => {
+    const docRef = doc(db, 'characters', 'jack');
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
+      console.log('Document data:', docSnap.data());
+    } else {
+      // doc.data() will be undefined in this case
+      console.log('No such document!');
+    }
+  };
 
   const setCoordinates = (e: React.MouseEvent<HTMLDivElement>) => {
     setClientX(e.pageX);
@@ -21,12 +35,13 @@ const GameField = () => {
     setShowMenu(!showMenu);
     //const click = e.currentTarget.getBoundingClientRect();
 
-    console.log(docRef);
+    //console.log(docRef);
+    getData();
+    console.log(naturalDimensions);
   };
 
   const chooseCharacter = (name: string) => {
     setCharacter(name);
-    console.log(character, clientX, naturalWidth);
   };
 
   /*
@@ -41,8 +56,12 @@ let realYValue = y * yourImageReal.height / yourImage.clientHeight
         src="/images/image.jpg"
         alt="waldo"
         onLoad={(event) => {
-          setNaturalWidth(event.currentTarget.naturalWidth);
-          setNaturalHeight(event.currentTarget.clientWidth);
+          setNaturalDimensions({
+            naturalWidth: event.currentTarget.naturalWidth,
+            naturalHeight: event.currentTarget.naturalHeight,
+            clientHeight: event.currentTarget.clientHeight,
+            clientWidth: event.currentTarget.clientWidth,
+          });
         }}
       />
 
