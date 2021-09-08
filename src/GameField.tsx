@@ -6,11 +6,11 @@ import { doc, getDoc } from 'firebase/firestore';
 import { db } from './firebase_config';
 
 const GameField = () => {
-  const [clientX, setClientX] = useState(0);
-  const [clientY, setClientY] = useState(0);
+  const [xPos, setXPos] = useState(0);
+  const [yPos, setYPos] = useState(0);
   const [character, setCharacter] = useState('');
   const [showMenu, setShowMenu] = useState(false);
-  const [naturalDimensions, setNaturalDimensions] = useState({
+  const [dimensions, setDimensions] = useState({
     naturalHeight: 0,
     naturalWidth: 0,
     clientHeight: 0,
@@ -30,14 +30,14 @@ const GameField = () => {
   };
 
   const setCoordinates = (e: React.MouseEvent<HTMLDivElement>) => {
-    setClientX(e.pageX);
-    setClientY(e.pageY);
+    setXPos(e.pageX);
+    setYPos(e.pageY);
     setShowMenu(!showMenu);
     //const click = e.currentTarget.getBoundingClientRect();
 
     //console.log(docRef);
     getData();
-    console.log(naturalDimensions);
+    console.log(dimensions);
   };
 
   const chooseCharacter = (name: string) => {
@@ -56,7 +56,7 @@ let realYValue = y * yourImageReal.height / yourImage.clientHeight
         src="/images/image.jpg"
         alt="waldo"
         onLoad={(event) => {
-          setNaturalDimensions({
+          setDimensions({
             naturalWidth: event.currentTarget.naturalWidth,
             naturalHeight: event.currentTarget.naturalHeight,
             clientHeight: event.currentTarget.clientHeight,
@@ -66,8 +66,8 @@ let realYValue = y * yourImageReal.height / yourImage.clientHeight
       />
 
       <DropDown
-        xPos={clientX}
-        yPos={clientY}
+        xPos={xPos}
+        yPos={yPos}
         showMenu={showMenu}
         chooseCharacter={chooseCharacter}
       />
