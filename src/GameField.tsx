@@ -7,13 +7,17 @@ import { db } from './firebase_config';
 
 const GameField = () => {
   const [position, setPosition] = useState({ xPos: 0, yPos: 0 });
-  const [character, setCharacter] = useState('');
   const [showMenu, setShowMenu] = useState(false);
   const [dimensions, setDimensions] = useState({
     naturalHeight: 0,
     naturalWidth: 0,
     clientHeight: 0,
     clientWidth: 0,
+  });
+  const [choice, setChoice] = useState({
+    realXValue: 0,
+    realYValue: 0,
+    name: '',
   });
 
   const getData = async () => {
@@ -31,15 +35,17 @@ const GameField = () => {
   const setCoordinates = (e: React.MouseEvent<HTMLDivElement>) => {
     setPosition({ xPos: e.pageX, yPos: e.pageY });
     setShowMenu(!showMenu);
-    //const click = e.currentTarget.getBoundingClientRect();
-
-    //console.log(docRef);
-    getData();
-    console.log(position);
   };
 
   const chooseCharacter = (name: string) => {
-    setCharacter(name);
+    setChoice({
+      realXValue:
+        (position.xPos * dimensions.naturalWidth) / dimensions.clientWidth,
+      realYValue:
+        (position.yPos * dimensions.naturalHeight) / dimensions.clientHeight,
+      name: name,
+    });
+    getData();
   };
 
   /*
