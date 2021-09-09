@@ -21,7 +21,7 @@ const GameField = () => {
   });
 
   const getData = async () => {
-    const docRef = doc(db, 'characters', 'jack');
+    const docRef = doc(db, 'characters', choice.name);
     const docSnap = await getDoc(docRef);
 
     if (docSnap.exists()) {
