@@ -6,8 +6,7 @@ import { doc, getDoc } from 'firebase/firestore';
 import { db } from './firebase_config';
 
 const GameField = () => {
-  const [xPos, setXPos] = useState(0);
-  const [yPos, setYPos] = useState(0);
+  const [position, setPosition] = useState({ xPos: 0, yPos: 0 });
   const [character, setCharacter] = useState('');
   const [showMenu, setShowMenu] = useState(false);
   const [dimensions, setDimensions] = useState({
@@ -30,14 +29,13 @@ const GameField = () => {
   };
 
   const setCoordinates = (e: React.MouseEvent<HTMLDivElement>) => {
-    setXPos(e.pageX);
-    setYPos(e.pageY);
+    setPosition({ xPos: e.pageX, yPos: e.pageY });
     setShowMenu(!showMenu);
     //const click = e.currentTarget.getBoundingClientRect();
 
     //console.log(docRef);
     getData();
-    console.log(dimensions);
+    console.log(position);
   };
 
   const chooseCharacter = (name: string) => {
@@ -66,8 +64,7 @@ let realYValue = y * yourImageReal.height / yourImage.clientHeight
       />
 
       <DropDown
-        xPos={xPos}
-        yPos={yPos}
+        position={position}
         showMenu={showMenu}
         chooseCharacter={chooseCharacter}
       />

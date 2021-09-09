@@ -3,9 +3,8 @@ import React from 'react';
 import classes from './DropDown.module.css';
 
 const DropDown: React.FC<DropDownProp> = ({
-  xPos,
-  yPos,
   showMenu,
+  position,
   chooseCharacter,
 }) => {
   return (
@@ -14,15 +13,15 @@ const DropDown: React.FC<DropDownProp> = ({
         <div
           className={clsx(classes.container)}
           style={{
-            top: yPos - 20,
-            left: xPos - 20,
+            top: position.yPos - 20,
+            left: position.xPos - 20,
           }}
         ></div>
         <div
           className={clsx(classes.menu)}
           style={{
-            top: yPos + 30,
-            left: xPos + 30,
+            top: position.yPos + 30,
+            left: position.xPos + 30,
           }}
         >
           <button onClick={() => chooseCharacter('jack')}>Jak</button>
@@ -37,8 +36,10 @@ const DropDown: React.FC<DropDownProp> = ({
 export default DropDown;
 
 interface DropDownProp {
-  xPos: number;
-  yPos: number;
+  position: {
+    xPos: number;
+    yPos: number;
+  };
   showMenu: boolean;
   chooseCharacter: (name: string) => void;
 }
