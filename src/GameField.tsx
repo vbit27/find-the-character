@@ -2,13 +2,7 @@ import React, { useEffect, useState } from 'react';
 import classes from './GameField.module.css';
 import clsx from 'clsx';
 import DropDown from './DropDown';
-import {
-  collection,
-  doc,
-  DocumentReference,
-  getDoc,
-  getDocs,
-} from 'firebase/firestore';
+import { doc, getDoc } from 'firebase/firestore';
 import { db } from './firebase_config';
 
 const GameField = () => {
@@ -25,29 +19,30 @@ const GameField = () => {
     yPos: 0,
     name: '',
   });
+  const [result, setResult] = React.useState<Array<String>>([]);
 
   useEffect(() => {
-    compareChoice();
+    getData();
   }, [choice]);
 
-  const compareChoice = () => {
-    if (choice.name) {
-      getData();
-    }
-  };
+  useEffect(() => {
+    console.log(result);
+  }, [result]);
 
+  // get data afrom db
   const getData = async () => {
-    const docRef = doc(db, 'characters', choice.name);
-    const docSnap = await getDoc(docRef);
-
-    if (docSnap.exists()) {
-      checkForHit(docSnap);
-    } else {
-      // doc.data() will be undefined in this case
-      console.log('No such document!');
+    if (choice.name) {
+      const docRef = doc(db, 'characters', choice.name);
+      try {
+        const docSnap = await getDoc(docRef);
+        checkForHit(docSnap);
+      } catch (error) {
+        console.log('No such document!', error);
+      }
     }
   };
 
+  // Check if there is a match
   const checkForHit = (doc: any) => {
     if (
       choice.yPos > doc.data().yPos - 150 &&
@@ -55,7 +50,7 @@ const GameField = () => {
       choice.xPos > doc.data().xPos - 150 &&
       choice.xPos < doc.data().xPos + 150
     ) {
-      console.log('yaaaaaaaaaaay');
+      setResult([...result, choice.name]);
     }
   };
 
@@ -73,11 +68,6 @@ const GameField = () => {
     });
   };
 
-  /*
-
-    let realXValue = x * yourImageReal.width / yourImage.clientWidth
-let realYValue = y * yourImageReal.height / yourImage.clientHeight
-*/
   return (
     <div className={clsx(classes.border)} onClick={(e) => setCoordinates(e)}>
       <img
@@ -98,6 +88,7 @@ let realYValue = y * yourImageReal.height / yourImage.clientHeight
         position={position}
         showMenu={showMenu}
         chooseCharacter={chooseCharacter}
+        result={result}
       />
     </div>
   );

@@ -6,6 +6,7 @@ const DropDown: React.FC<DropDownProp> = ({
   showMenu,
   position,
   chooseCharacter,
+  result,
 }) => {
   return (
     <div>
@@ -24,9 +25,16 @@ const DropDown: React.FC<DropDownProp> = ({
             left: position.xPos + 30,
           }}
         >
-          <button onClick={() => chooseCharacter('jack')}>Jak</button>
-          <button onClick={() => chooseCharacter('ratchet')}>Ratchet</button>
-          <button onClick={() => chooseCharacter('juna')}>Juna</button>
+          {result.includes('jack') ? null : (
+            <button onClick={() => chooseCharacter('jack')}>Jak</button>
+          )}
+
+          {result.includes('ratchet') ? null : (
+            <button onClick={() => chooseCharacter('ratchet')}>Ratchet</button>
+          )}
+          {result.includes('juna') ? null : (
+            <button onClick={() => chooseCharacter('juna')}>Juna</button>
+          )}
         </div>
       </div>
     </div>
@@ -42,4 +50,5 @@ interface DropDownProp {
   };
   showMenu: boolean;
   chooseCharacter: (name: string) => void;
+  result: Array<String>;
 }
