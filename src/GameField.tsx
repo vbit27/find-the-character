@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import classes from './GameField.module.css';
 import clsx from 'clsx';
 import DropDown from './DropDown';
-import { doc, getDoc } from 'firebase/firestore';
+import { collection, doc, getDoc, getDocs } from 'firebase/firestore';
 import { db } from './firebase_config';
 
 const GameField = () => {
@@ -15,17 +15,29 @@ const GameField = () => {
     clientWidth: 0,
   });
   const [choice, setChoice] = useState({
-    realXValue: 0,
-    realYValue: 0,
+    xPos: 0,
+    yPos: 0,
     name: '',
   });
 
+  useEffect(() => {
+    compareChoice();
+  }, [choice]);
+
+  const compareChoice = () => {
+    if (choice.name) {
+      getData();
+    }
+  };
+
   const getData = async () => {
     const docRef = doc(db, 'characters', choice.name);
+
     const docSnap = await getDoc(docRef);
 
     if (docSnap.exists()) {
       console.log('Document data:', docSnap.data());
+      console.log('Your choice ', choice);
     } else {
       // doc.data() will be undefined in this case
       console.log('No such document!');
@@ -39,13 +51,11 @@ const GameField = () => {
 
   const chooseCharacter = (name: string) => {
     setChoice({
-      realXValue:
-        (position.xPos * dimensions.naturalWidth) / dimensions.clientWidth,
-      realYValue:
+      xPos: (position.xPos * dimensions.naturalWidth) / dimensions.clientWidth,
+      yPos:
         (position.yPos * dimensions.naturalHeight) / dimensions.clientHeight,
       name: name,
     });
-    getData();
   };
 
   /*
