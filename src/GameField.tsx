@@ -2,7 +2,13 @@ import React, { useEffect, useState } from 'react';
 import classes from './GameField.module.css';
 import clsx from 'clsx';
 import DropDown from './DropDown';
-import { collection, doc, getDoc, getDocs } from 'firebase/firestore';
+import {
+  collection,
+  doc,
+  DocumentReference,
+  getDoc,
+  getDocs,
+} from 'firebase/firestore';
 import { db } from './firebase_config';
 
 const GameField = () => {
@@ -32,15 +38,24 @@ const GameField = () => {
 
   const getData = async () => {
     const docRef = doc(db, 'characters', choice.name);
-
     const docSnap = await getDoc(docRef);
 
     if (docSnap.exists()) {
-      console.log('Document data:', docSnap.data());
-      console.log('Your choice ', choice);
+      checkForHit(docSnap);
     } else {
       // doc.data() will be undefined in this case
       console.log('No such document!');
+    }
+  };
+
+  const checkForHit = (doc: any) => {
+    if (
+      choice.yPos > doc.data().yPos - 150 &&
+      choice.yPos < doc.data().yPos + 150 &&
+      choice.xPos > doc.data().xPos - 150 &&
+      choice.xPos < doc.data().xPos + 150
+    ) {
+      console.log('yaaaaaaaaaaay');
     }
   };
 
