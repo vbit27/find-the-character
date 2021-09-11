@@ -22,6 +22,7 @@ const GameField = () => {
   });
   const [result, setResult] = React.useState<Array<String>>([]);
   const [match, setMatch] = useState(true);
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     getData();
@@ -53,6 +54,11 @@ const GameField = () => {
       choice.xPos < doc.data().xPos + 150
     ) {
       setResult([...result, choice.name]);
+      setMatch(true);
+      setVisible(true);
+    } else {
+      setMatch(false);
+      setVisible(true);
     }
   };
 
@@ -92,7 +98,7 @@ const GameField = () => {
         chooseCharacter={chooseCharacter}
         result={result}
       />
-      <PopUp match={match} />
+      {visible ? <PopUp match={match} setVisible={setVisible} /> : null}
     </div>
   );
 };

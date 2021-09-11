@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import classes from './PopUp.module.css';
 import clsx from 'clsx';
 
-const PopUp: React.FC<PopUpProps> = ({ match }) => {
+const PopUp: React.FC<PopUpProps> = ({ match, setVisible }) => {
+  useEffect(() => {
+    setTimeout(() => {
+      setVisible(false);
+    }, 2500);
+  }, [match]);
+
   return (
     <div
       className={clsx(
@@ -17,6 +23,7 @@ const PopUp: React.FC<PopUpProps> = ({ match }) => {
 
 interface PopUpProps {
   match: boolean;
+  setVisible: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export default PopUp;
