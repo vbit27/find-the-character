@@ -21,6 +21,7 @@ const GameField = () => {
     name: '',
   });
   const [result, setResult] = React.useState<Array<String>>([]);
+  const [match, setMatch] = useState(true);
 
   useEffect(() => {
     getData();
@@ -91,7 +92,7 @@ const GameField = () => {
         chooseCharacter={chooseCharacter}
         result={result}
       />
-      <PopUp />
+      <PopUp match={match} />
     </div>
   );
 };
