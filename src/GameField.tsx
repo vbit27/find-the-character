@@ -4,6 +4,7 @@ import clsx from 'clsx';
 import DropDown from './DropDown';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from './firebase_config';
+import PopUp from './PopUp';
 
 const GameField = () => {
   const [position, setPosition] = useState({ xPos: 0, yPos: 0 });
@@ -90,6 +91,7 @@ const GameField = () => {
         chooseCharacter={chooseCharacter}
         result={result}
       />
+      <PopUp />
     </div>
   );
 };
