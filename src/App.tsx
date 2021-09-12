@@ -6,6 +6,7 @@ import Rules from './Rules';
 
 function App() {
   const [gameStatus, setGameStatus] = useState(false);
+  const [gameEnded, setGameEnded] = useState(false);
 
   const updateGameStatus = () => {
     setGameStatus(!gameStatus);

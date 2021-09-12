@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import classes from './PopUp.module.css';
 import clsx from 'clsx';
 
