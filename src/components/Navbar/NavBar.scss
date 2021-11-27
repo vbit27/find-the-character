@@ -1,0 +1,24 @@
+@import '../../styles/styles';
+
+.nav {
+  height: 80px;
+  background-color: $darkBlueColor;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+
+  &__img__container {
+    display: flex;
+    gap: 20px;
+    flex-grow: 1;
+    padding: 0 10px;
+  }
+
+  img {
+    width: 70px;
+    border-radius: 50px;
+  }
+}

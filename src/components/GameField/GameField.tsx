@@ -7,20 +7,24 @@ import { db } from '../../firebase_config';
 import PopUp from '../PopUp/PopUp';
 import NavBar from '../Navbar/NavBar';
 
+const initialDimensions = {
+  naturalHeight: 0,
+  naturalWidth: 0,
+  clientHeight: 0,
+  clientWidth: 0,
+};
+
+const initialChoice = {
+  xPos: 0,
+  yPos: 0,
+  name: '',
+};
+
 const GameField = () => {
   const [position, setPosition] = useState({ xPos: 0, yPos: 0 });
   const [showMenu, setShowMenu] = useState(false);
-  const [dimensions, setDimensions] = useState({
-    naturalHeight: 0,
-    naturalWidth: 0,
-    clientHeight: 0,
-    clientWidth: 0,
-  });
-  const [choice, setChoice] = useState({
-    xPos: 0,
-    yPos: 0,
-    name: '',
-  });
+  const [dimensions, setDimensions] = useState(initialDimensions);
+  const [choice, setChoice] = useState(initialChoice);
   const [result, setResult] = React.useState<Array<String>>([]);
   const [match, setMatch] = useState(true);
   const [visible, setVisible] = useState(false);

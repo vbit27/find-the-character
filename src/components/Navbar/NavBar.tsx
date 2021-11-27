@@ -1,16 +1,19 @@
-import classes from './NavBar.module.scss';
 import Timer from '../Timer/Timer';
+import jak from '../../assets/jak.svg';
+import yuna from '../../assets/yuna.svg';
+import ratchet from '../../assets/ratchet.svg';
+import './NavBar.scss';
 
 export default function NavBar() {
   return (
-    <div className={classes.topnav}>
-      <a className={classes.active} href="#home">
-        Home
-      </a>
-      <a href="#news">News</a>
-      <a href="#contact">Contact</a>
-      <a href="#about">About</a>
-      <Timer />
-    </div>
+    <>
+      <nav className="nav">
+        <div className="nav__img__container">
+          <img src={jak} alt="jak" className="nav__img" />
+          <img src={yuna} alt="yuna" className="nav__img" />
+          <img src={ratchet} alt="ratchet" className="nav__img" />
+        </div>
+      </nav>
+    </>
   );
 }

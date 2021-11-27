@@ -1,7 +1,7 @@
 import './Rules.scss';
 import React from 'react';
 
-const Rules: React.FC<RulesProps> = ({ updateStatus }) => {
+const Rules: React.FC<RulesProps> = ({ updateGameStatus }) => {
   return (
     <>
       <div className="container">
@@ -15,7 +15,7 @@ const Rules: React.FC<RulesProps> = ({ updateStatus }) => {
             character and choose his name <br />- Repeat until you find all
             three characters <br />- Be as fast as possible
           </div>
-          <button className="card__button" onClick={updateStatus}>
+          <button className="card__button" onClick={updateGameStatus}>
             Start Game
           </button>
         </div>
@@ -25,7 +25,7 @@ const Rules: React.FC<RulesProps> = ({ updateStatus }) => {
 };
 
 interface RulesProps {
-  updateStatus: () => void;
+  updateGameStatus: () => void;
 }
 
 export default Rules;
