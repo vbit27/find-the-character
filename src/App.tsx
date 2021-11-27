@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
-import './App.css';
-import GameField from './GameField';
-import NavBar from './NavBar';
-import Rules from './Rules';
+import './App.scss';
+import GameField from './components/GameField/GameField';
+import NavBar from './components/Navbar/NavBar';
+import Rules from './components/Rules/Rules';
+import Timer from './components/Timer/Timer';
+
+export const GameStatus = React.createContext(false);
 
 function App() {
   const [gameStatus, setGameStatus] = useState(false);
@@ -13,10 +16,12 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <NavBar />
-      {gameStatus ? <GameField /> : <Rules updateStatus={updateGameStatus} />}
-    </div>
+    <GameStatus.Provider value={gameEnded}>
+      <div className="App">
+        <NavBar />
+        {gameStatus ? <GameField /> : <Rules updateStatus={updateGameStatus} />}
+      </div>
+    </GameStatus.Provider>
   );
 }
 

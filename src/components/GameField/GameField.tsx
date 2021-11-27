@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import classes from './GameField.module.css';
 import clsx from 'clsx';
-import DropDown from './DropDown';
+import DropDown from '../DropDown/DropDown';
 import { doc, getDoc } from 'firebase/firestore';
-import { db } from './firebase_config';
-import PopUp from './PopUp';
+import { db } from '../../firebase_config';
+import PopUp from '../PopUp/PopUp';
 
 const GameField = () => {
   const [position, setPosition] = useState({ xPos: 0, yPos: 0 });

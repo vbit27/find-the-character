@@ -7,12 +7,17 @@ import {
   CardActions,
 } from '@material-ui/core';
 import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
+import './Rules.scss';
+
 import React from 'react';
 
 const Rules: React.FC<RulesProps> = ({ updateStatus }) => {
   return (
     <>
       <Container maxWidth="xs">
+        <div className="sass">
+          <h1>Hello im sass</h1>
+        </div>
         <Card>
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2">
