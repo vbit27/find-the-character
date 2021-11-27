@@ -5,6 +5,7 @@ import DropDown from '../DropDown/DropDown';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../../firebase_config';
 import PopUp from '../PopUp/PopUp';
+import NavBar from '../Navbar/NavBar';
 
 const GameField = () => {
   const [position, setPosition] = useState({ xPos: 0, yPos: 0 });
@@ -77,29 +78,33 @@ const GameField = () => {
   };
 
   return (
-    <div className={clsx(classes.border)} onClick={(e) => setCoordinates(e)}>
-      <img
-        className={clsx(classes.image)}
-        src="/images/image.jpg"
-        alt="waldo"
-        onLoad={(event) => {
-          setDimensions({
-            naturalWidth: event.currentTarget.naturalWidth,
-            naturalHeight: event.currentTarget.naturalHeight,
-            clientHeight: event.currentTarget.clientHeight,
-            clientWidth: event.currentTarget.clientWidth,
-          });
-        }}
-      />
+    <>
+      <NavBar />
 
-      <DropDown
-        position={position}
-        showMenu={showMenu}
-        chooseCharacter={chooseCharacter}
-        result={result}
-      />
-      {visible ? <PopUp match={match} setVisible={setVisible} /> : null}
-    </div>
+      <div className={clsx(classes.border)} onClick={(e) => setCoordinates(e)}>
+        <img
+          className={clsx(classes.image)}
+          src="/images/image.jpg"
+          alt="waldo"
+          onLoad={(event) => {
+            setDimensions({
+              naturalWidth: event.currentTarget.naturalWidth,
+              naturalHeight: event.currentTarget.naturalHeight,
+              clientHeight: event.currentTarget.clientHeight,
+              clientWidth: event.currentTarget.clientWidth,
+            });
+          }}
+        />
+
+        <DropDown
+          position={position}
+          showMenu={showMenu}
+          chooseCharacter={chooseCharacter}
+          result={result}
+        />
+        {visible ? <PopUp match={match} setVisible={setVisible} /> : null}
+      </div>
+    </>
   );
 };
 

@@ -1,47 +1,25 @@
-import {
-  Card,
-  Container,
-  Typography,
-  CardContent,
-  Button,
-  CardActions,
-} from '@material-ui/core';
-import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
 import './Rules.scss';
-
 import React from 'react';
 
 const Rules: React.FC<RulesProps> = ({ updateStatus }) => {
   return (
     <>
-      <Container maxWidth="xs">
-        <div className="sass">
-          <h1>Hello im sass</h1>
+      <div className="container">
+        <h1>Find the caracters</h1>
+        <div className="card">
+          <div className="card__tittle">
+            <h3>Game Rules</h3>
+          </div>
+          <div className="card__rules">
+            - Search for the characters on the picture <br />- Click on the
+            character and choose his name <br />- Repeat until you find all
+            three characters <br />- Be as fast as possible
+          </div>
+          <button className="card__button" onClick={updateStatus}>
+            Start Game
+          </button>
         </div>
-        <Card>
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="h2">
-              Where is Waldo - Game Rules
-            </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
-              - Search for the characters on the picture <br />- Click when you
-              find a character and choose his name at the pop-up window <br />-
-              Do the same for all the characters <br />- Try to find them all as
-              fast as possible
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <Button
-              startIcon={<PlayCircleOutlineIcon />}
-              variant="contained"
-              color="secondary"
-              onClick={updateStatus}
-            >
-              Start Game
-            </Button>
-          </CardActions>
-        </Card>
-      </Container>
+      </div>
     </>
   );
 };

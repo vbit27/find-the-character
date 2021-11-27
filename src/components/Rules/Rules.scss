@@ -1,3 +1,66 @@
-.sass {
-  color: red;
+@import '../../styles/styles';
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #ececec;
+  padding: 2rem 2rem;
+  background-color: $darkBlueColor;
+
+  h1 {
+    padding: 2rem;
+    text-align: center;
+  }
+
+  @media screen and (max-width: 460px) {
+    h1 {
+      padding: 1rem;
+      font-size: 40px;
+      line-height: 2rem;
+    }
+  }
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba($color: #ececec, $alpha: 0.8);
+  padding: 2rem 2rem;
+  max-width: 500px;
+  flex-wrap: wrap;
+  border-radius: 15px;
+  color: $darkBlueColor;
+
+  &__tittle {
+    color: $blueColor;
+    padding-bottom: 1rem;
+  }
+
+  &__rules {
+    font-size: 1.3rem;
+    padding-bottom: 3rem;
+  }
+
+  &__button {
+    width: fit-content;
+    font-size: 1.3rem;
+    background-color: $blueColor;
+    border-radius: 24px;
+    padding: 0.5em 1em;
+    color: white;
+    font-weight: bold;
+
+    &:hover {
+      background-color: cadetblue;
+    }
+  }
+
+  @media screen and (max-width: 460px) {
+    padding: 0.2rem 0.2rem;
+  }
 }

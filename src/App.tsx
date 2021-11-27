@@ -18,7 +18,6 @@ function App() {
   return (
     <GameStatus.Provider value={gameEnded}>
       <div className="App">
-        <NavBar />
         {gameStatus ? <GameField /> : <Rules updateStatus={updateGameStatus} />}
       </div>
     </GameStatus.Provider>

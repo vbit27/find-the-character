@@ -11,3 +11,53 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  ::selection {
+    background-color: #ff3644;
+    color: white;
+  }
+}
+
+html {
+  font-size: 100%;
+} /*16px*/
+
+body {
+  background: #fefaf6;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.75;
+  color: #000000;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 700;
+  line-height: 1.3;
+  text-align: left;
+}
+
+h1 {
+  font-size: 50px;
+  line-height: 89px;
+  letter-spacing: 0.02em;
+}
+
+h2 {
+  font-size: 40px;
+  line-height: 67px;
+  letter-spacing: 0.02em;
+}
+
+h3 {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 51px;
+}
