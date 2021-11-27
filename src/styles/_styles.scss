@@ -1,2 +1,12 @@
 $blueColor: #47767b;
 $darkBlueColor: #282c4f;
+
+@mixin buttonStyle() {
+  width: fit-content;
+  font-size: 1.3rem;
+  background-color: $blueColor;
+  border-radius: 24px;
+  padding: 0.5em 1em;
+  color: white;
+  font-weight: bold;
+}

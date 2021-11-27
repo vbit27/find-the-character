@@ -47,13 +47,7 @@
   }
 
   &__button {
-    width: fit-content;
-    font-size: 1.3rem;
-    background-color: $blueColor;
-    border-radius: 24px;
-    padding: 0.5em 1em;
-    color: white;
-    font-weight: bold;
+    @include buttonStyle();
 
     &:hover {
       background-color: cadetblue;

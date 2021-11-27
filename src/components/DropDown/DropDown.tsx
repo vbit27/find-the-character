@@ -7,7 +7,24 @@ const DropDown: React.FC<DropDownProp> = ({
   position,
   chooseCharacter,
   result,
+  dimensions,
 }) => {
+  //if clicked on the edge show dropdown on the other side of the box
+  const checkEdges = () => {
+    if (
+      dimensions.clientWidth - position.xPos < 120 ||
+      dimensions.naturalHeight - position.yPos < 120
+    ) {
+      return {
+        top: position.yPos - 120,
+        left: position.xPos - 120,
+      };
+    } else
+      return {
+        top: position.yPos + 20,
+        left: position.xPos + 20,
+      };
+  };
   return (
     <div>
       <div style={{ display: showMenu ? 'block' : 'none' }}>
@@ -18,13 +35,7 @@ const DropDown: React.FC<DropDownProp> = ({
             left: position.xPos - 20,
           }}
         ></div>
-        <div
-          className={clsx(classes.menu)}
-          style={{
-            top: position.yPos + 30,
-            left: position.xPos + 30,
-          }}
-        >
+        <div className={clsx(classes.menu)} style={checkEdges()}>
           {result.includes('jack') ? null : (
             <button onClick={() => chooseCharacter('jack')}>Jak</button>
           )}
@@ -51,4 +62,10 @@ interface DropDownProp {
   showMenu: boolean;
   chooseCharacter: (name: string) => void;
   result: Array<String>;
+  dimensions: {
+    naturalHeight: number;
+    naturalWidth: number;
+    clientHeight: number;
+    clientWidth: number;
+  };
 }

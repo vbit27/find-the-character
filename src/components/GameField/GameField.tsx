@@ -34,8 +34,8 @@ const GameField = () => {
   }, [choice]);
 
   useEffect(() => {
-    console.log(result);
-  }, [result]);
+    console.log(position, dimensions);
+  }, [position, dimensions]);
 
   // get data afrom db
   const getData = async () => {
@@ -84,7 +84,6 @@ const GameField = () => {
   return (
     <>
       <NavBar />
-
       <div className={clsx(classes.border)} onClick={(e) => setCoordinates(e)}>
         <img
           className={clsx(classes.image)}
@@ -101,6 +100,7 @@ const GameField = () => {
         />
 
         <DropDown
+          dimensions={dimensions}
           position={position}
           showMenu={showMenu}
           chooseCharacter={chooseCharacter}

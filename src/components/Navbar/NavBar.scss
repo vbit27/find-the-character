@@ -9,6 +9,7 @@
   position: sticky;
   top: 0;
   z-index: 99;
+  padding: 0 20px;
 
   &__img__container {
     display: flex;
@@ -20,5 +21,19 @@
   img {
     width: 70px;
     border-radius: 50px;
+  }
+
+  button {
+    @include buttonStyle();
+  }
+
+  @media screen and (max-width: 460px) {
+    img {
+      width: 40px;
+    }
+
+    button {
+      font-size: 1.2rem;
+    }
   }
 }
