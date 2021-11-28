@@ -16,10 +16,9 @@ function App() {
   };
 
   return (
-    <GameStatus.Provider value={gameEnded}>
+    <GameStatus.Provider value={gameStatus}>
       <div className="App">
         <NavBar />
-
         {gameStatus ? (
           <GameField />
         ) : (

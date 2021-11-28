@@ -13,7 +13,7 @@ export default function NavBar() {
           <img src={yuna} alt="yuna" className="nav__img" />
           <img src={ratchet} alt="ratchet" className="nav__img" />
         </div>
-        <button>Restart</button>
+        <Timer />
       </nav>
     </>
   );

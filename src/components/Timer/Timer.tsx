@@ -1,24 +1,28 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { GameStatus } from '../../App';
+import { formatTime } from '../../utils';
 import classes from './Timer.module.css';
 
 const Timer = () => {
-  const gameEnded = useContext(GameStatus);
-  const [time, setTime] = useState(0);
+  const [timer, setTimer] = useState(0);
+  const gameStatus = useContext(GameStatus);
 
   useEffect(() => {
-    let interval = null;
-
-    if (gameEnded) {
-      setInterval(() => {
-        setTime((prevTime) => prevTime + 10);
-      });
+    let interval: any;
+    if (gameStatus) {
+      interval = setInterval(() => {
+        setTimer((prev) => prev + 1);
+      }, 1000);
+    } else {
+      clearInterval(interval);
+      setTimer(0);
     }
-  }, [gameEnded]);
+    return () => clearInterval(interval);
+  }, [gameStatus]);
 
   return (
     <div className={classes.container}>
-      <h2>{time}</h2>
+      <h2> {formatTime(timer)}</h2>
     </div>
   );
 };

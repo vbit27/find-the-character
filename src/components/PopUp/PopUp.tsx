@@ -6,7 +6,7 @@ const PopUp: React.FC<PopUpProps> = ({ match, setVisible }) => {
   useEffect(() => {
     setTimeout(() => {
       setVisible(false);
-    }, 2500);
+    }, 1000);
   }, [match]);
 
   return (
