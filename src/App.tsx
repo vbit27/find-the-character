@@ -12,7 +12,7 @@ export const GameStatus = React.createContext(false);
 function App() {
   const [isGameOver, setIsGameOver] = useState(true);
   const [timer, setTimer] = useState(0);
-  const [winnersList, setWinnersList] = useState('');
+  const [winnersList, setWinnersList] = useState([]);
 
   const collRef = collection(db, 'winners');
 
@@ -25,12 +25,18 @@ function App() {
       name,
       time: timer,
     });
+    getWinnerData();
   };
 
-  const getPlayerData = async () => {
+  const getWinnerData = async () => {
     try {
-      const docSnap = await getDocs(collRef);
-      console.log(docSnap);
+      await getDocs(collRef).then((snapshot) => {
+        let winners: any = [];
+        snapshot.docs.forEach((doc) => {
+          winners.push({ ...doc.data() });
+        });
+        console.log(winners);
+      });
     } catch (error) {
       console.log('No such document!', error);
     }
