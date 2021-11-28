@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import './PlayerName.scss';
 
-const PlayerName: React.FC<PlayersNameProps> = ({ setPlayersName }) => {
+const PlayerName: React.FC<PlayersNameProps> = ({ addWinner }) => {
   const [input, setInput] = useState('');
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setPlayersName(input);
+    addWinner(input);
   };
   return (
     <>
@@ -33,7 +33,7 @@ const PlayerName: React.FC<PlayersNameProps> = ({ setPlayersName }) => {
 };
 
 interface PlayersNameProps {
-  setPlayersName: React.Dispatch<React.SetStateAction<string>>;
+  addWinner: (name: string) => void;
 }
 
 export default PlayerName;

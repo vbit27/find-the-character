@@ -23,7 +23,7 @@ const initialChoice = {
 const GameField: React.FC<GameFieldProps> = ({
   setIsGameOver,
   isGameOver,
-  setPlayersName,
+  addWinner,
 }) => {
   const [position, setPosition] = useState({ xPos: 0, yPos: 0 });
   const [showMenu, setShowMenu] = useState(false);
@@ -102,7 +102,7 @@ const GameField: React.FC<GameFieldProps> = ({
   return (
     <>
       {isGameOver ? (
-        <PlayerName setPlayersName={setPlayersName} />
+        <PlayerName addWinner={addWinner} />
       ) : (
         <div
           className={clsx(classes.border)}
@@ -121,7 +121,6 @@ const GameField: React.FC<GameFieldProps> = ({
               });
             }}
           />
-
           <DropDown
             dimensions={dimensions}
             position={position}
@@ -139,7 +138,7 @@ const GameField: React.FC<GameFieldProps> = ({
 interface GameFieldProps {
   setIsGameOver: React.Dispatch<React.SetStateAction<boolean>>;
   isGameOver: boolean;
-  setPlayersName: React.Dispatch<React.SetStateAction<string>>;
+  addWinner: (name: string) => void;
 }
 
 export default GameField;

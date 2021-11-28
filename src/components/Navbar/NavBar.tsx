@@ -35,7 +35,6 @@ const NavBar: React.FC<NavBarProps> = ({ isGameOver, setTimer, timer }) => {
 
 interface NavBarProps {
   isGameOver: boolean;
-  gameStart: boolean;
   setTimer: React.Dispatch<React.SetStateAction<number>>;
   timer: number;
 }
