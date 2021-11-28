@@ -5,24 +5,20 @@ import './NavBar.scss';
 import { useEffect, useState } from 'react';
 import { formatTime } from '../../utils';
 
-const NavBar: React.FC<NavBarProps> = ({ gameStart, isGameOver }) => {
-  const [timer, setTimer] = useState(0);
-
+const NavBar: React.FC<NavBarProps> = ({ isGameOver, setTimer, timer }) => {
   //start timer
   useEffect(() => {
     let interval: any;
-    if (gameStart) {
+    if (!isGameOver) {
       interval = setInterval(() => {
         setTimer((prev) => prev + 1);
       }, 1000);
-    }
-    if (isGameOver) {
+    } else if (isGameOver) {
       // clear when the game is over
       clearInterval(interval);
-      setTimer(0);
     }
     return () => clearInterval(interval);
-  }, [gameStart, isGameOver]);
+  }, [isGameOver]);
   return (
     <>
       <nav className="nav">
@@ -31,7 +27,7 @@ const NavBar: React.FC<NavBarProps> = ({ gameStart, isGameOver }) => {
           <img src={yuna} alt="yuna" className="nav__img" />
           <img src={ratchet} alt="ratchet" className="nav__img" />
         </div>
-        {gameStart && <div className="timer">{formatTime(timer)}</div>}
+        {!isGameOver && <div className="timer">{formatTime(timer)}</div>}
       </nav>
     </>
   );
@@ -40,6 +36,8 @@ const NavBar: React.FC<NavBarProps> = ({ gameStart, isGameOver }) => {
 interface NavBarProps {
   isGameOver: boolean;
   gameStart: boolean;
+  setTimer: React.Dispatch<React.SetStateAction<number>>;
+  timer: number;
 }
 
 export default NavBar;
