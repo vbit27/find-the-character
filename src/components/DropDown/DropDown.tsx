@@ -9,14 +9,14 @@ const DropDown: React.FC<DropDownProp> = ({
   result,
   dimensions,
 }) => {
-  //if clicked on the edge show dropdown on the other side of the box
+  //if clicked on the edge of screen show dropdown on the other side of the box
   const checkEdges = () => {
     if (
       dimensions.clientWidth - position.xPos < 120 ||
       dimensions.naturalHeight - position.yPos < 120
     ) {
       return {
-        top: position.yPos - 120,
+        top: position.yPos - 80,
         left: position.xPos - 120,
       };
     } else
@@ -37,7 +37,7 @@ const DropDown: React.FC<DropDownProp> = ({
         ></div>
         <div className={clsx(classes.menu)} style={checkEdges()}>
           {result.includes('jack') ? null : (
-            <button onClick={() => chooseCharacter('jack')}>Jak</button>
+            <button onClick={() => chooseCharacter('jack')}>Jack</button>
           )}
 
           {result.includes('ratchet') ? null : (

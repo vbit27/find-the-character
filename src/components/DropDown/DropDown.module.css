@@ -10,6 +10,8 @@
   width: 100px;
   position: absolute;
   background-color: wheat;
+  display: flex;
+  flex-direction: column;
 }
 
 button {

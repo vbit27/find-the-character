@@ -34,8 +34,8 @@ const GameField = () => {
   }, [choice]);
 
   useEffect(() => {
-    console.log(position, dimensions);
-  }, [position, dimensions]);
+    console.log(dimensions, position, choice);
+  }, [choice, position, choice]);
 
   // get data afrom db
   const getData = async () => {
@@ -60,11 +60,10 @@ const GameField = () => {
     ) {
       setResult([...result, choice.name]);
       setMatch(true);
-      setVisible(true);
     } else {
       setMatch(false);
-      setVisible(true);
     }
+    setVisible(true);
   };
 
   const setCoordinates = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -83,7 +82,6 @@ const GameField = () => {
 
   return (
     <>
-      <NavBar />
       <div className={clsx(classes.border)} onClick={(e) => setCoordinates(e)}>
         <img
           className={clsx(classes.image)}
@@ -93,8 +91,8 @@ const GameField = () => {
             setDimensions({
               naturalWidth: event.currentTarget.naturalWidth,
               naturalHeight: event.currentTarget.naturalHeight,
-              clientHeight: event.currentTarget.clientHeight,
-              clientWidth: event.currentTarget.clientWidth,
+              clientHeight: event.currentTarget.offsetHeight,
+              clientWidth: event.currentTarget.offsetWidth,
             });
           }}
         />
