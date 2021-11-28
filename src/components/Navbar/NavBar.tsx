@@ -4,7 +4,7 @@ import yuna from '../../assets/yuna.svg';
 import ratchet from '../../assets/ratchet.svg';
 import './NavBar.scss';
 
-export default function NavBar() {
+const NavBar: React.FC<NavBarProps> = ({ gameStart, isGameOver }) => {
   return (
     <>
       <nav className="nav">
@@ -13,8 +13,15 @@ export default function NavBar() {
           <img src={yuna} alt="yuna" className="nav__img" />
           <img src={ratchet} alt="ratchet" className="nav__img" />
         </div>
-        <Timer />
+        <Timer gameStart={gameStart} isGameOver={isGameOver} />
       </nav>
     </>
   );
+};
+
+interface NavBarProps {
+  isGameOver: boolean;
+  gameStart: boolean;
 }
+
+export default NavBar;

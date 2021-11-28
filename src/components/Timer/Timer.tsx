@@ -3,22 +3,23 @@ import { GameStatus } from '../../App';
 import { formatTime } from '../../utils';
 import classes from './Timer.module.css';
 
-const Timer = () => {
+const Timer: React.FC<TimerProps> = ({ gameStart, isGameOver }) => {
   const [timer, setTimer] = useState(0);
-  const gameStatus = useContext(GameStatus);
 
   useEffect(() => {
     let interval: any;
-    if (gameStatus) {
+    if (gameStart) {
       interval = setInterval(() => {
         setTimer((prev) => prev + 1);
       }, 1000);
-    } else {
+    }
+    if (isGameOver) {
+      // clear when the game is over
       clearInterval(interval);
       setTimer(0);
     }
     return () => clearInterval(interval);
-  }, [gameStatus]);
+  }, [gameStart, isGameOver]);
 
   return (
     <div className={classes.container}>
@@ -26,5 +27,10 @@ const Timer = () => {
     </div>
   );
 };
+
+interface TimerProps {
+  isGameOver: boolean;
+  gameStart: boolean;
+}
 
 export default Timer;

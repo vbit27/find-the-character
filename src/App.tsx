@@ -8,18 +8,18 @@ import Timer from './components/Timer/Timer';
 export const GameStatus = React.createContext(false);
 
 function App() {
-  const [gameStatus, setGameStatus] = useState(false);
-  const [gameEnded, setGameEnded] = useState(false);
+  const [gameStart, setGameStart] = useState(false);
+  const [isGameOver, setIsGameOver] = useState(false);
 
   const updateGameStatus = () => {
-    setGameStatus(!gameStatus);
+    setGameStart(!gameStart);
   };
 
   return (
-    <GameStatus.Provider value={gameStatus}>
+    <GameStatus.Provider value={gameStart}>
       <div className="App">
-        <NavBar />
-        {gameStatus ? (
+        <NavBar gameStart={gameStart} isGameOver={isGameOver} />
+        {gameStart ? (
           <GameField />
         ) : (
           <Rules updateGameStatus={updateGameStatus} />
