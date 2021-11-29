@@ -5,7 +5,7 @@ import DropDown from '../DropDown/DropDown';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../../firebase_config';
 import PopUp from '../PopUp/PopUp';
-import PlayerName from './PlayerName/PlayerName';
+import PlayerName from '../PlayerName/PlayerName';
 
 const initialDimensions = {
   naturalHeight: 0,

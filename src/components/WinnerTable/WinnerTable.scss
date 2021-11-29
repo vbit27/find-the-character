@@ -1,0 +1,45 @@
+@import '../../styles/styles';
+
+.container {
+  @include container();
+  gap: 2rem;
+}
+
+table,
+th,
+td {
+  border: 1px solid rgb(168, 168, 168);
+  border-collapse: collapse;
+}
+
+table {
+  width: 100%;
+  max-width: 700px;
+  height: fit-content;
+  margin: 0 auto;
+  display: block;
+  overflow-x: auto;
+  border-spacing: 0;
+  border-radius: 25px;
+
+  th {
+    background-color: aliceblue;
+    color: $darkBlueColor;
+    height: 70px;
+    padding: 0 1rem;
+  }
+  thead {
+    font-weight: bold;
+  }
+  td {
+    padding: 1rem 2rem;
+  }
+}
+
+tbody {
+  white-space: nowrap;
+}
+
+button {
+  @include buttonStyle();
+}
