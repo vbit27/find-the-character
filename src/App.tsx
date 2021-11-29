@@ -13,7 +13,7 @@ export const GameStatus = React.createContext(false);
 function App() {
   const [isGameOver, setIsGameOver] = useState(true);
   const [timer, setTimer] = useState(0);
-  const [winnersList, setWinnersList] = useState<Array<Object>>([]);
+  const [winnersList, setWinnersList] = useState<Array<winner>>([]);
 
   const collRef = collection(db, 'winners');
 
@@ -48,10 +48,23 @@ function App() {
     }
   };
 
+  const handleRestartGame = () => {
+    setIsGameOver(true);
+    setTimer(0);
+    setWinnersList([]);
+  };
+
+  if (winnersList.length > 0)
+    return (
+      <WinnerTable
+        winnersList={winnersList}
+        handleRestartGame={handleRestartGame}
+      />
+    );
+
   return (
     <div className="App">
       <NavBar isGameOver={isGameOver} timer={timer} setTimer={setTimer} />
-      <WinnerTable />
       {timer ? (
         <GameField
           setIsGameOver={setIsGameOver}
@@ -63,6 +76,11 @@ function App() {
       )}
     </div>
   );
+}
+
+interface winner {
+  name: string;
+  time: number;
 }
 
 export default App;

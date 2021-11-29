@@ -2,31 +2,21 @@ import React from 'react';
 import { formatTime } from '../../utils';
 import './WinnerTable.scss';
 
-const WinnerTable: React.FC = () => {
-  let winners = [
-    {
-      name: 'helloooooooo',
-      time: 22,
-    },
-    {
-      time: 15,
-      name: 'sami',
-    },
-    {
-      time: 12,
-      name: 'sami',
-    },
-  ];
+const WinnerTable: React.FC<WinnerTableProps> = ({
+  winnersList,
+  handleRestartGame,
+}) => {
+  const sortedList = winnersList.sort((a, b) => a.time - b.time);
 
   return (
     <>
       <div className="container">
-        <button>Play Again</button>
+        <button onClick={handleRestartGame}>Play Again</button>
         <div className="table-wrapper">
           <table className="table">
             <thead>
               <tr>
-                <th colSpan={2}>The hall of fame</th>
+                <th colSpan={2}>Hall of fame</th>
               </tr>
             </thead>
             <thead>
@@ -36,8 +26,8 @@ const WinnerTable: React.FC = () => {
               </tr>
             </thead>
             <tbody>
-              {winners.map((winner) => (
-                <tr>
+              {sortedList.map((winner, index) => (
+                <tr key={index}>
                   <td>{winner.name}</td>
                   <td>{formatTime(winner.time)}</td>
                 </tr>
@@ -49,5 +39,15 @@ const WinnerTable: React.FC = () => {
     </>
   );
 };
+
+interface WinnerTableProps {
+  winnersList: Array<winner>;
+  handleRestartGame: () => void;
+}
+
+interface winner {
+  name: string;
+  time: number;
+}
 
 export default WinnerTable;
