@@ -1,6 +1,5 @@
-import clsx from 'clsx';
 import React from 'react';
-import classes from './DropDown.module.css';
+import './DropDown.scss';
 
 const DropDown: React.FC<DropDownProp> = ({
   showMenu,
@@ -29,13 +28,13 @@ const DropDown: React.FC<DropDownProp> = ({
     <div>
       <div style={{ display: showMenu ? 'block' : 'none' }}>
         <div
-          className={clsx(classes.container)}
+          className="container-dropdown"
           style={{
             top: position.yPos - 20,
             left: position.xPos - 20,
           }}
         ></div>
-        <div className={clsx(classes.menu)} style={checkEdges()}>
+        <div className="menu" style={checkEdges()}>
           {result.includes('jack') ? null : (
             <button onClick={() => chooseCharacter('jack')}>Jack</button>
           )}

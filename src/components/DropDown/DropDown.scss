@@ -1,4 +1,4 @@
-.container {
+.container-dropdown {
   position: absolute;
   width: 15px;
   height: 15px;
@@ -12,16 +12,17 @@
   background-color: wheat;
   display: flex;
   flex-direction: column;
-}
 
-button {
-  width: 100%;
-  border: none;
-  background-color: antiquewhite;
-  font-size: 1rem;
-  cursor: pointer;
-}
+  button {
+    width: 100%;
+    border: none;
+    background-color: #a0e2ff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0.3rem 0.7rem;
+  }
 
-button:hover {
-  background-color: rgb(192, 179, 161);
+  button:hover {
+    background-color: #cef0ff;
+  }
 }

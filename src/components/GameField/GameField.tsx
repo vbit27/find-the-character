@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import classes from './GameField.module.css';
+import './GameField.scss';
 import clsx from 'clsx';
 import DropDown from '../DropDown/DropDown';
 import { doc, getDoc } from 'firebase/firestore';
@@ -104,12 +104,9 @@ const GameField: React.FC<GameFieldProps> = ({
       {isGameOver ? (
         <PlayerName addWinner={addWinner} />
       ) : (
-        <div
-          className={clsx(classes.border)}
-          onClick={(e) => setCoordinates(e)}
-        >
+        <div onClick={(e) => setCoordinates(e)}>
           <img
-            className={clsx(classes.image)}
+            className="image"
             src="/images/image.jpg"
             alt="waldo"
             onLoad={(event) => {

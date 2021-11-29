@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import classes from './PopUp.module.css';
+import './PopUp.scss';
 import clsx from 'clsx';
 
 const PopUp: React.FC<PopUpProps> = ({ match, setVisible }) => {
@@ -10,13 +10,8 @@ const PopUp: React.FC<PopUpProps> = ({ match, setVisible }) => {
   }, [match]);
 
   return (
-    <div
-      className={clsx(
-        classes.container,
-        match ? classes.success : classes.fail
-      )}
-    >
-      {match ? <h2>It's a match!</h2> : <h2>Not a match</h2>}
+    <div className={clsx('container-popup', match ? 'success' : 'fail')}>
+      {match ? <p>It's a match!</p> : <p>Not a match</p>}
     </div>
   );
 };
