@@ -24,8 +24,11 @@ const NavBar: React.FC<NavBarProps> = ({ isGameOver, setTimer, timer }) => {
       <nav className="nav">
         <div className="nav__img__container">
           <img src={jak} alt="jak" className="nav__img" />
+          <p>Jack</p>
           <img src={yuna} alt="yuna" className="nav__img" />
+          <p>Yuna</p>
           <img src={ratchet} alt="ratchet" className="nav__img" />
+          <p>Ratchet</p>
         </div>
         {!isGameOver && <div className="timer">{formatTime(timer)}</div>}
       </nav>

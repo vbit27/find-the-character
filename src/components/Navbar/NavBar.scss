@@ -14,9 +14,12 @@
 
   &__img__container {
     display: flex;
+    justify-content: flex-start;
+    align-items: center;
     gap: 20px;
     flex-grow: 1;
     padding: 0 10px;
+    color: white;
   }
 
   img {
@@ -27,6 +30,12 @@
   .timer {
     color: white;
     font-size: 1.8rem;
+  }
+
+  @media screen and (max-width: 660px) {
+    p {
+      display: none;
+    }
   }
 
   @media screen and (max-width: 460px) {
