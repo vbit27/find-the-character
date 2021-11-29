@@ -10,7 +10,7 @@ const WinnerTable: React.FC<WinnerTableProps> = ({
 
   return (
     <>
-      <div className="container">
+      <div className="container-table">
         <button onClick={handleRestartGame}>Play Again</button>
         <div className="table-wrapper">
           <table className="table">

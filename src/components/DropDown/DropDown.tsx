@@ -44,7 +44,7 @@ const DropDown: React.FC<DropDownProp> = ({
             <button onClick={() => chooseCharacter('ratchet')}>Ratchet</button>
           )}
           {result.includes('juna') ? null : (
-            <button onClick={() => chooseCharacter('juna')}>Juna</button>
+            <button onClick={() => chooseCharacter('juna')}>Yuna</button>
           )}
         </div>
       </div>
