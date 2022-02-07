@@ -45,7 +45,7 @@
 
 ![Find the Characters App Screenshot](https://user-images.githubusercontent.com/75995237/152778563-d4e8ccdb-3da2-4346-a9b7-3f5fd0f820a2.png)
 
-I developed this game to get to know more of Firebase. For styling, I opted for SASS, which allowed me to use less and reusable code.
+I developed this game to get to know more of Firebase. This was the first time that I used a database, for this reason, I chose Firebase, which does not require custom coding of the backend. For styling, I opted for SASS, which allowed me to use less and reusable code.
 
 ### What I learned
 
