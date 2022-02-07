@@ -41,18 +41,16 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 
 <!-- ABOUT THE PROJECT -->
 
 ## About The Project
 
-![Recipe App Screen Shot](https://user-images.githubusercontent.com/75995237/152765089-0c4bbd2f-7e9d-49e9-9a40-3e446155c3af.gif)
+![Find the Characters App Screenshot](https://user-images.githubusercontent.com/75995237/152778563-d4e8ccdb-3da2-4346-a9b7-3f5fd0f820a2.png)
 
 This app displays a list of restaurants, bars and various services in the city of Saranda, Albania. The recommendations are selected based on a price-quality criteria.
 <br/><br/>
