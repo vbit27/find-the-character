@@ -1,46 +1,159 @@
-# Getting Started with Create React App
+<div id="top"></div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
-## Available Scripts
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+    <img src="src/assets/images/fish-icon.svg" alt="fish logo" width="80" height="80">
 
-In the project directory, you can run:
+  <h3 align="center">Find The Characters</h3>
 
-### `yarn start`
+  <p align="center">
+  A simple game where you have to search for the listed characters in the image. The purpose of creating this game was to practice my knowledge of Firebase, a NoSQL database.   
+  <br />
+    <a href="https://github.com/vbit27/find-the-character"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/vbit27/find-the-character" target="_blank">View Demo</a>
+    ·
+    <a href="https://github.com/vbit27/find-the-character/issues">Report Bug</a>
+    
+  </p>
+</div>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<!-- TABLE OF CONTENTS -->
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Table of Contents
 
-### `yarn test`
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<!-- ABOUT THE PROJECT -->
 
-### `yarn build`
+## About The Project
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Recipe App Screen Shot](https://user-images.githubusercontent.com/75995237/152765089-0c4bbd2f-7e9d-49e9-9a40-3e446155c3af.gif)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+This app displays a list of restaurants, bars and various services in the city of Saranda, Albania. The recommendations are selected based on a price-quality criteria.
+<br/><br/>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+By using Google Maps API, users can see the exact coordinates of the place, as well as some additional information such as: short description, price range, phone number, etc.
+<br/><br/>
 
-### `yarn eject`
+The Explore page was created using Material UI. Material UI offers a light, user-friendly and simple design that allowed to create a responsive page that easily adapts to any possible screen size.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Built With
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- [React Google Maps API](https://www.npmjs.com/package/@react-google-maps/api)
+- [Material UI](https://mui.com/)
+- [React.js](https://reactjs.org/)
+- [React Router](https://reactrouter.com/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Axios](https://axios-http.com/docs/intro)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<!-- GETTING STARTED -->
 
-## Learn More
+## Getting Started
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+To get a local copy up and running follow these simple example steps.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Prerequisites
+
+- Get an API key at [Google Map API](https://developers.google.com/maps)
+  (Google API is not for free but it has a free monthly quote)
+- Activate **Maps JavaScript API** and **Places API** inside the dashboard
+
+### Installation
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/vbit27/local-guide.git
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
+3. Create an `.env` file inside the root folder
+4. Enter your API in `.env`
+   ```js
+   const REACT_APP_GOOGLE_KEY = 'ENTER YOUR API KEY';
+   ```
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- CONTRIBUTING -->
+
+## Contributing
+
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+## Future Work
+
+- Create a 404 page
+- Create a preview image
+  https://www.youtube.com/watch?v=PjpPJfolInU&ab_channel=%C3%87elikK%C3%B6seo%C4%9Flu
+- Close popup window when changing chategory
+
+<!-- LICENSE -->
+
+## License
+
+Distributed under the MIT License. See `LICENSE.txt` for more information.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- CONTACT -->
+
+## Contact
+
+Vasil Bituni - [Linkedin](www.linkedin.com/in/vasilis-bitounis) - vasil.bituni@gmail.com
+
+Project Link: [https://github.com/vbit27/local-guide](https://github.com/vbit27/local-guide)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- ACKNOWLEDGMENTS -->
+
+## Acknowledgments
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
+[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
+[license-url]: https://github.com/vbit27/recipe-app/blob/main/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/vasilis-bitounis
