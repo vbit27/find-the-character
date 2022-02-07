@@ -6,7 +6,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-    <img src="src/assets/images/fish-icon.svg" alt="fish logo" width="80" height="80">
+    <img src="src/assets/logo.png" alt="orange cat" width="80" height="80">
 
   <h3 align="center">Find The Characters</h3>
 
@@ -64,12 +64,10 @@ The Explore page was created using Material UI. Material UI offers a light, user
 
 ### Built With
 
-- [React Google Maps API](https://www.npmjs.com/package/@react-google-maps/api)
-- [Material UI](https://mui.com/)
+- [Firebase](https://firebase.google.com/)
+- [SASS](https://sass-lang.com/)
 - [React.js](https://reactjs.org/)
-- [React Router](https://reactrouter.com/)
 - [TypeScript](https://www.typescriptlang.org/)
-- [Axios](https://axios-http.com/docs/intro)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -119,13 +117,6 @@ If you have a suggestion that would make this better, please fork the repo and c
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-## Future Work
-
-- Create a 404 page
-- Create a preview image
-  https://www.youtube.com/watch?v=PjpPJfolInU&ab_channel=%C3%87elikK%C3%B6seo%C4%9Flu
-- Close popup window when changing chategory
-
 <!-- LICENSE -->
 
 ## License
@@ -140,13 +131,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Vasil Bituni - [Linkedin](www.linkedin.com/in/vasilis-bitounis) - vasil.bituni@gmail.com
 
-Project Link: [https://github.com/vbit27/local-guide](https://github.com/vbit27/local-guide)
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-<!-- ACKNOWLEDGMENTS -->
-
-## Acknowledgments
+Project Link: [https://github.com/vbit27/find-the-character](https://github.com/vbit27/find-the-character)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
