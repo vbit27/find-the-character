@@ -47,11 +47,11 @@
 
 I developed this game to get to know more of Firebase. For styling, I opted for SASS, which allowed me to use less and reusable code.
 
-# What I learned
+### What I learned
 
 I got a better understanding of collections and documents, fetching and displaying data from a database, as well as working with asynchronous data in general.
 
-# How to play the game
+### How to play the game
 
 - After reading the instructions carefully, press the "Play" button
 - In the upper right corner of the screen, a timer will start
