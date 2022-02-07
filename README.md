@@ -68,36 +68,6 @@ I got a better understanding of collections and documents, fetching and displayi
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-<!-- GETTING STARTED -->
-
-## Getting Started
-
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-- Get an API key at [Google Map API](https://developers.google.com/maps)
-  (Google API is not for free but it has a free monthly quote)
-- Activate **Maps JavaScript API** and **Places API** inside the dashboard
-
-### Installation
-
-1. Clone the repo
-   ```sh
-   git clone https://github.com/vbit27/local-guide.git
-   ```
-2. Install NPM packages
-   ```sh
-   npm install
-   ```
-3. Create an `.env` file inside the root folder
-4. Enter your API in `.env`
-   ```js
-   const REACT_APP_GOOGLE_KEY = 'ENTER YOUR API KEY';
-   ```
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
 <!-- CONTRIBUTING -->
 
 ## Contributing
