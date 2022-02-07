@@ -34,13 +34,6 @@
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -52,13 +45,19 @@
 
 ![Find the Characters App Screenshot](https://user-images.githubusercontent.com/75995237/152778563-d4e8ccdb-3da2-4346-a9b7-3f5fd0f820a2.png)
 
-This app displays a list of restaurants, bars and various services in the city of Saranda, Albania. The recommendations are selected based on a price-quality criteria.
-<br/><br/>
+I developed this game to get to know more of Firebase. For styling, I opted for SASS, which allowed me to use less and reusable code.
 
-By using Google Maps API, users can see the exact coordinates of the place, as well as some additional information such as: short description, price range, phone number, etc.
-<br/><br/>
+# What I learned
 
-The Explore page was created using Material UI. Material UI offers a light, user-friendly and simple design that allowed to create a responsive page that easily adapts to any possible screen size.
+I got a better understanding of collections and documents, fetching and displaying data from a database, as well as working with asynchronous data in general.
+
+# How to play the game
+
+- After reading the instructions carefully, press the "Play" button
+- In the upper right corner of the screen, a timer will start
+- Scroll down and search for all three characters
+- When you click on a character, a drop-down menu with the names will appear. Select the corresponding name
+- Once you have found all the characters, a table will appear where you can fill in your name
 
 ### Built With
 
