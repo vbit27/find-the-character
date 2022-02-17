@@ -16,7 +16,7 @@
     <a href="https://github.com/vbit27/find-the-character"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/vbit27/find-the-character" target="_blank">View Demo</a>
+    <a href="https://find-the-character.netlify.app/" target="_blank">View Demo</a>
     ·
     <a href="https://github.com/vbit27/find-the-character/issues">Report Bug</a>
     
